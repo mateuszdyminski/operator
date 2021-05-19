@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-db-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: users-db
+  template:
+    metadata:
+      labels:
+        app: users-db
+        serviceName: users-db-srv
+    spec:
+      containers:
+      - name: users-db
+        image: mateuszdyminski/users-db:68abde1
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 8080

@@ -1,0 +1,57 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.4.1
+  creationTimestamp: null
+  name: usersdb2s.cache.example.com
+spec:
+  group: cache.example.com
+  names:
+    kind: UsersDB2
+    listKind: UsersDB2List
+    plural: usersdb2s
+    singular: usersdb2
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: UsersDB2 is the Schema for the usersdb2s API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: UsersDB2Spec defines the desired state of UsersDB2
+            properties:
+              backup_destination:
+                description: Foo is an example field of UsersDB2. Edit usersdb2_types.go
+                  to remove/update
+                type: string
+            type: object
+          status:
+            description: UsersDB2Status defines the observed state of UsersDB2
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

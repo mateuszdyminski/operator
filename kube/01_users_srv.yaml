@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: users-db-srv
+  labels:
+    app: users-db
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    nodePort: 30001
+  selector:
+    app: users-db

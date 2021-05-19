@@ -1,0 +1,7 @@
+apiVersion: cache.example.com/v1alpha1
+kind: UsersDB
+metadata:
+  name: usersdb-sample
+spec:
+  # Add fields here
+  foo: bar

@@ -1,0 +1,24 @@
+# permissions for end users to edit usersdbs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: usersdb-editor-role
+rules:
+- apiGroups:
+  - cache.example.com
+  resources:
+  - usersdbs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - cache.example.com
+  resources:
+  - usersdbs/status
+  verbs:
+  - get
